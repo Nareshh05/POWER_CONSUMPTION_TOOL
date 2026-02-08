@@ -1,7 +1,7 @@
 import pandas as pd
 from prophet import Prophet
 import plotly.express as px
-from meteostat import Point, daily as Daily
+from meteostat import Point, Daily
 from datetime import datetime,timedelta
 from dateutil.relativedelta import relativedelta
 import os

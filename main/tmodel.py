@@ -2,7 +2,7 @@ import pandas as pd
 from prophet import Prophet
 import plotly.express as px
 import plotly.io as pio
-from meteostat import Point, daily as Daily
+from meteostat import Point, Daily
 from datetime import datetime,timedelta
 from dateutil.relativedelta import relativedelta
 import plotly.graph_objects as go
