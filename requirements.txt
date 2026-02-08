@@ -214,7 +214,7 @@ trio
 trio-websocket
 twilio
 typer
-typing_extensions
+
 tzdata
 urllib3
 uvicorn
