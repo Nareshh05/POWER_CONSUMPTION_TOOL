@@ -6,6 +6,8 @@ from model import *
 import io
 import base64
 import plotly.io as pio
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import plotly.express as px
 from plotly.io import to_image
