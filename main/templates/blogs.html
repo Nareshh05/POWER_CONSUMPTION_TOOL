@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Blogs - SIH SmartAutomation</title>
+    <link rel="stylesheet" href="/static/css/theme.css" />
+    <link rel="stylesheet" href="/static/css/vibrant.css" />
+    <link rel="stylesheet" href="/static/css/ux.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+</head>
+
+<body>
+    <!-- Full Screen Loader -->
+    <div id="page-loader">
+        <div class="loader-content">
+            <h2 class="text-3xl font-bold logo-gradient tracking-widest">POWER<br>CONSUMPTION</h2>
+            <p class="text-gray-400 mt-2 text-sm">LOADING SMART MONITOR...</p>
+        </div>
+    </div>
+
+    <main>
+        <div id="app-layout" class="overflow-x-hidden flex">
+            <nav class="navbar-vertical navbar">
+                <div id="myScrollableElement" class="h-screen" data-simplebar>
+                    <!-- brand logo -->
+                    <a class="navbar-brand flex items-center justify-center py-4" href="/dashbord">
+                        <h2 class="text-2xl font-bold logo-gradient tracking-wider text-center">POWER<br>CONSUMPTION
+                        </h2>
+                    </a>
+
+                    <ul class="navbar-nav flex-col" id="sideNavbar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashbord">
+                                <i data-feather="home" class="w-4 h-4 mr-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="navbar-heading">Pages</div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="/model">
+                                <i data-feather="layers" class="w-4 h-4 mr-2"></i>
+                                Electricity Model
+                            </a>
+                            <a class="nav-link collapsed" href="/tmodel">
+                                <i data-feather="layers" class="w-4 h-4 mr-2"></i>
+                                Energy Profiling
+                            </a>
+                        </li>
+                        <!-- nav item -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/blogs">
+                                <i data-feather="book-open" class="w-4 h-4 mr-2"></i>
+                                Blogs Page
+                            </a>
+                            <div id="navAuthentication" class="collapse" data-bs-parent="#sideNavbar">
+                                <ul class="nav flex-col">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/sign-in">Sign In</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/sign-up">Sign Up</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/forget-password">Forget Password</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="navbar-heading">Others</div>
+                        </li>
+                        <!-- nav item -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="/feedback">
+                                <i data-feather="message-square" class="w-4 h-4 mr-2"></i>
+                                Feedback
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="/settings">
+                                <i data-feather="settings" class="w-4 h-4 mr-2"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <!-- Authentication Section (Visible) -->
+                        <li class="nav-item mt-4">
+                            <div class="navbar-heading">Authentication</div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-neon-blue" href="/sign-in">
+                                <i data-feather="log-in" class="w-4 h-4 mr-2"></i>
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-red-400" href="/logout">
+                                <i data-feather="log-out" class="w-4 h-4 mr-2"></i>
+                                Logout
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <!--end of navbar-->
+
+            <!-- app layout content -->
+            <div id="app-layout-content"
+                class="min-h-screen w-full min-w-[100vw] md:min-w-0 ml-[15.625rem] [transition:margin_0.25s_ease-out]">
+                <div class="p-8">
+                    <h1 class="text-4xl font-bold mb-8 text-center text-gradient mt-10">Energy Insights Blog</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Blog Case 1 -->
+                        <div class="card glass">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
+                                    alt="Energy" class="rounded-xl mb-4 w-full h-48 object-cover">
+                                <h4 class="text-xl font-bold mb-2">10 Ways to Save Energy at Home</h4>
+                                <p class="text-gray-400 mb-4">Discover simple changes you can make today to reduce your
+                                    electricity bill and carbon footprint.</p>
+                                <a href="#" class="text-neon-blue font-semibold hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                        <!-- Blog Case 2 -->
+                        <div class="card glass">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"
+                                    alt="Solar" class="rounded-xl mb-4 w-full h-48 object-cover">
+                                <h4 class="text-xl font-bold mb-2">The Future of Solar Power in Delhi</h4>
+                                <p class="text-gray-400 mb-4">How rooftop solar installations are changing the energy
+                                    landscape
+                                    of the national capital.</p>
+                                <a href="#" class="text-neon-blue font-semibold hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                        <!-- Blog Case 3 -->
+                        <div class="card glass">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80"
+                                    alt="AI" class="rounded-xl mb-4 w-full h-48 object-cover">
+                                <h4 class="text-xl font-bold mb-2">AI-Driven Energy Optimization</h4>
+                                <p class="text-gray-400 mb-4">Understanding the algorithms behind our energy consumption
+                                    predictor models.</p>
+                                <a href="#" class="text-neon-blue font-semibold hover:underline">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="/dashbord" class="btn btn-primary px-8 py-3">Back to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Libs JS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+    <script src="/static/js/theme.js"></script>
+    <script src="/static/js/ux.js"></script>
+</body>
+
+
+</html>

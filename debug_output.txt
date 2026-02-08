@@ -1,0 +1,32 @@
+17:10:11 - cmdstanpy - INFO - Chain [1] start processing
+17:10:11 - cmdstanpy - INFO - Chain [1] done processing
+17:10:11 - cmdstanpy - INFO - Chain [1] start processing
+17:10:11 - cmdstanpy - INFO - Chain [1] done processing
+File1 exists: True
+File2 exists: True
+
+--- Testing Thermal ---
+Initial shape: (259, 6)
+Thermal Only shape: (64, 6)
+Rows before/after dropna: 64 / 64
+           ds         y
+0  2019-02-01  89.30048
+9  2019-03-01  82.81242
+10 2019-04-01  66.80572
+18 2019-07-01  87.37192
+19 2019-08-01  80.78213
+Thermal Forecast generated
+Thermal Result: JSON_OK
+
+--- Testing Renewable ---
+Initial shape: (2087, 12)
+Tamil Nadu shape: (74, 12)
+Rows before/after dropna: 73 / 47
+            ds        y
+281 2019-04-01   844.20
+318 2019-05-01  2068.57
+355 2019-06-01  2984.24
+392 2019-07-01  3039.23
+429 2019-08-01  3054.42
+Renewable Forecast generated
+Renewable Result: JSON_OK

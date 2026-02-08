@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In - Smart Energy Monitor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+
+        .login-card {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 93, 211, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(108, 93, 211, 0.4);
+        }
+
+        .icon-container i {
+            font-size: 28px;
+            color: #6c5dd3;
+            /* Purple lightning */
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333;
+            /* Dark title for contrast inside the glass */
+            text-shadow: none;
+        }
+
+        /* Adjust text color based on screenshot which has dark text on light glass? 
+           Wait, screenshot shows dark text "POWER CONSUMPTION" on a darker glass?
+           Actually, looking closely at the user's screenshot: 
+           Background is dark/blurry. Text "POWER CONSUMPTION" is Dark Grey/Black. 
+           This implies the card background might be lighter.
+           Let's adjust card background to be more milky/white glass. */
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.15);
+            /* Slightly lighter */
+        }
+
+        h1 {
+            color: #1f2937;
+            /* Dark gray */
+        }
+
+        p.subtitle {
+            color: #4b5563;
+            /* Medium gray */
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #374151;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            /* White inputs as in screenshot */
+            color: #333;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #6c5dd3;
+            box-shadow: 0 0 0 3px rgba(108, 93, 211, 0.2);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .actions a {
+            color: #6c5dd3;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .btn-signin {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 15px;
+        }
+
+        .btn-signin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 93, 211, 0.4);
+        }
+
+        .footer-text {
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        .footer-text a {
+            color: #6c5dd3;
+            /* Purple accent */
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="login-card">
+        <div class="icon-container">
+            <i class="fas fa-bolt"></i>
+        </div>
+
+        <h1>POWER CONSUMPTION</h1>
+        <p class="subtitle">Smart Energy Monitoring System</p>
+
+        <form action="/sign-in" method="POST">
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="test@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <label style="margin-bottom: 0;">Password</label>
+                    <a href="/forget-password" style="font-size: 12px; color: #6c5dd3; text-decoration: none;">Forgot
+                        password?</a>
+                </div>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-signin">Sign In</button>
+        </form>
+
+        <p class="footer-text">
+            Don't have an account? <a href="/sign-up">Sign up now</a>
+        </p>
+    </div>
+</body>
+
+</html>
